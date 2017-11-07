@@ -1,2 +1,2 @@
 # gameproject
-phase1
+phase1game
