@@ -1,14 +1,11 @@
 const express = require('express')
 const app = express()
+const teacher = require('./router/monster')
 
 app.set('views', './views') // specify the views directory
 app.set('view engine', 'ejs') // register the template engine
 
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app.get('/login', function(req, res) {
-    res.render('login')
-})
+app.use('/',teacher)
 
 
 

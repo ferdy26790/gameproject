@@ -1,10 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Char = sequelize.define('Char', {
+  var monsters = sequelize.define('monsters', {
     name: DataTypes.STRING,
     price: DataTypes.INTEGER,
     type: DataTypes.STRING,
     attack: DataTypes.INTEGER,
+    minattack: DataTypes.INTEGER,
+    maxattack: DataTypes.INTEGER,
+    defense: DataTypes.INTEGER,
+    image: DataTypes.STRING,
     health: DataTypes.INTEGER
   }, {
     classMethods: {
@@ -13,5 +17,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return Char;
+  return monsters;
 };
