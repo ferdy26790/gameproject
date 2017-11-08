@@ -1,12 +1,11 @@
-const express = require('express')
-const app = express()
-const teacher = require('./router/monster')
 
-app.set('views', './views') // specify the views directory
-app.set('view engine', 'ejs') // register the template engine
-
-app.use('/',teacher)
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }))
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
+
