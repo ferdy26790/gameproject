@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
     name: DataTypes.STRING,
-    credit: DataTypes.INTEGER
+    credit: DataTypes.INTEGER,
     email: {
       type: DataTypes.STRING,
       validate: {
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function(models) {
     // associations can be defined here
-    User.belongsTo(Model.Monster, {foreignKey: 'MonsterId' });
+    User.belongsTo(models.Monster, {foreignKey: 'MonsterId' });
   }
   return User;
 };
