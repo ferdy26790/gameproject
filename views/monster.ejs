@@ -5,8 +5,8 @@
          border: 1px solid black
         }
       </style>
-  
-  
+
+
       <meta charset="utf-8">
       <title>Profile</title>
     </head>
@@ -16,38 +16,28 @@
         <li><h3>Arena</h3></li>
         <li><h3>Shop</h3></li>
       </ul>
-  
-  
-      your status:
-      <br>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>wins</th>
-          <th>lose</th>
-          <th>credits</th>
-        </tr>
-      </table>
-      <br><br>
       <table>
         <tr>
           <th>Warrior</th>
+          <th>Name</th>
           <th>Health</th>
           <th>Min Attack</th>
           <th>Max Attack</th>
           <th>Defense</th>
         </tr>
-        <tr>
-          <td><img src="./img/inuyasha.gif"></td>
-          <td>100</td>
-          <td>12</td>
-          <td>17</td>
-          <td>20</td>
-        </tr>
+        <%monsterRows.forEach((monster)=>{%>
+          <tr>
+            <td><img src="/img/<%= monster.image %>"></td>
+            <td><%= monster.name %></td>
+            <td><%= monster.health %></td>
+            <td><%= monster.minattack %></td>
+            <td><%= monster.maxattack %></td>
+            <td><%= monster.defense %></td>
+          </tr>
+        <%})%>
+
       </table>
       <br>
       <button>search opponent</button>
     </body>
   </html>
-  
-  
