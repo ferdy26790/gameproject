@@ -5,7 +5,9 @@ const Model = require('../models')
 
 
 router.get('/monster', (req, res) => {
-  res.render('monster')
+  Model.Monster.findAll().then((monsterRows) => {
+    res.render('monster',{monsterRows})
+  })
 })
 
 module.exports = router

@@ -4,5 +4,5 @@ const Model = require('../models')
 
 
 router.get('/profile', (req, res) => {
-  res.render('profile')
+  
 })
