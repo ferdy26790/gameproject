@@ -1,15 +1,21 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Monster = sequelize.define('Monsters', {
+  var monsters = sequelize.define('monsters', {
     name: DataTypes.STRING,
     price: DataTypes.INTEGER,
     type: DataTypes.STRING,
     attack: DataTypes.INTEGER,
+    minattack: DataTypes.INTEGER,
+    maxattack: DataTypes.INTEGER,
+    defense: DataTypes.INTEGER,
+    image: DataTypes.STRING,
     health: DataTypes.INTEGER
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
+    }
   });
-  Monster.associate = function(models) {
-    // associations can be defined here
-    Monster.hasMany(Model.User, { foreignKey: 'MonsterId' });
-  }
-  return Monster;
+  return monsters;
 };
