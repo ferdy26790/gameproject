@@ -4,6 +4,7 @@ const Model = require('../models')
 
 
 
+
 router.get('/:id/profile', (req, res) => {
   Model.User.findById(req.params.id, 
     {include: [

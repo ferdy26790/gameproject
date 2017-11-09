@@ -5,8 +5,8 @@ const Model = require('../models')
 
 
 router.get('/', (req, res) => {
-  Model.Monsters.findAll().then((monsterRows) => {
-    res.render('monster',{monsterRows})
+  Model.Skills.findAll().then((shopRows) => {
+    res.render('shop',{shopRows})
   })
 })
 
