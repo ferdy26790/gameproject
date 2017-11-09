@@ -6,6 +6,7 @@ const path = require('path')
 const monster = require('./router/monster')
 const profile = require('./router/profile')
 const shop = require('./router/shop')
+const arena = require('./router/arena')
 //
 app.use(bodyParser.urlencoded({ extended: false }))
 app.set('views', './views');
@@ -14,6 +15,7 @@ app.use(express.static(path.join(__dirname,'/public')))
 app.use('/monster',monster)
 app.use('/profile',profile)
 app.use('/shop',shop)
+app.use('/arena',arena)
 
 
-app.listen(process.env.PORT || '3000', () => console.log('Example app listening on port 3000!'))
+app.listen(process.env.PORT || 3000, () => console.log('Example app listening on port 3000!'))
