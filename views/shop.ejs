@@ -1,0 +1,42 @@
+<html>
+    <head>
+      <style>
+        table,td,th{
+         border: 1px solid black
+        }
+      </style>
+
+
+      <meta charset="utf-8">
+      <title>Profile</title>
+    </head>
+    <body>
+      <ul>
+        <li><h3>Home</h3></li>
+        <li><h3>Arena</h3></li>
+        <li><h3>Shop</h3></li>
+      </ul>
+      <table>
+        <tr>
+          <th>Skill</th>
+          <th>Description</th>
+          <th>Power</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+        <%shopRows.forEach((shop)=>{%>
+          <tr>
+            <td><img src="/img/<%=shop.image%>"></td>
+            <td><%= shop.name %></td>
+            <td><%= shop.attack %></td>
+            <td><%= shop.type %></td>
+            <td>500</td>
+            <td><button>BUY</button></td>
+          </tr>
+        <%})%>
+
+      </table>
+      <br>
+      <button>search opponent</button>
+    </body>
+  </html>

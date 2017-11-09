@@ -15,15 +15,18 @@ module.exports = {
     return queryInterface.bulkInsert('Skills', [{
       name: 'Ram',
       attack: 2,
-      type:'attack'
+      type:'attack',
+      image:'slash.jpeg'
     },{
-      name: 'Energy ball',
+      name: 'Sharpnel',
       attack: 3,
-      type:'attack'
+      type:'attack',
+      image:'sharpnel.jpeg'
     },{
-      name: 'Meteor',
+      name: 'Ultimate',
       attack: 4,
-      type:'attack'
+      type:'attack',
+      image:'crit.jpeg'
     }], {});
   },
 
