@@ -10,13 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     defense: DataTypes.INTEGER,
     image: DataTypes.STRING,
     health: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+  Monster.associate = function(models) {
+        // associations can be defined here
+        Monster.hasMany(models.SkillMonsters, {foreignKey: 'MonsterId' });
+  }
   return Monster;
 };
-
