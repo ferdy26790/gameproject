@@ -11,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     win: DataTypes.INTEGER,
     lose: DataTypes.INTEGER,
+    password: DataTypes.STRING,
     MonsterId: DataTypes.INTEGER
   });
   User.associate = function(models) {
     // associations can be defined here
     User.belongsTo(models.Monster, {foreignKey: 'MonsterId' });
   }
+  
   return User;
 };

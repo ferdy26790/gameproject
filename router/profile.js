@@ -4,8 +4,8 @@ const Model = require('../models')
 
 
 
-router.get('/profile', (req, res) => {
-  Model.User.findById(1, 
+router.get('/:id/profile', (req, res) => {
+  Model.User.findById(req.params.id, 
     {include: [
     { model: Model.Monster}
  ]}).then((userRows) => {
@@ -13,5 +13,7 @@ router.get('/profile', (req, res) => {
     // res.send(userRows)
   })
 })
+
+
 
 module.exports = router
