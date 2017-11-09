@@ -4,15 +4,18 @@ const router = express.Router();
 const Model = require('../models')
 
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
   Model.Users.findAll({ include: [{model: Model.Monsters}]}).then((userRows) => {
-    res.render('arena',{userRows})
+    let id = req.params.id
+    res.render('arena',{userRows, id})
+    //res.send(userRows)
   })
 })
 
-router.get('/battle', (req, res) => {
+router.get('/:id/battle', (req, res) => {
   Model.Users.findAll({ include: [{model: Model.Monsters}]}).then((userRows) => {
-    res.render('arena',{userRows})
+    //res.render('arena',{userRows})
+    res.send(req.body.idmusuh)
   })
 })
 

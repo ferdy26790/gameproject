@@ -3,9 +3,18 @@ const router = express.Router();
 const Model = require('../models')
 const funct = require('../helper/myFunction')
 
-router.get('/', (req, res) => {
-  Model.Users.findAll( { include: [{model: Model.Monsters}]} ).then((userRows)=>{
-    res.send(userRows);
+
+
+router.get('/:id', (req, res) => {
+  Model.Users.findById(req.params.id,
+    {include: [
+    { model: Model.Monsters}
+ ]}).then((userRows) => {
+   let id = req.params.id
+    res.render('profile',{userRows, id})
+    // res.send(userRows)
+  }).catch((error)=>{
+    console.log(error);
   })
 })
 

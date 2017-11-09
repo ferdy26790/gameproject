@@ -1,60 +1,54 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      table,td,th{
-       border: 1px solid black
-      }
-    </style>
 
-
-    <meta charset="utf-8">
-    <title>Profile</title>
-  </head>
-  <body>
-    <ul>
-      <li><h3>Home</h3></li>
-      <li><h3>Arena</h3></li>
-      <li><h3>Shop</h3></li>
-    </ul>
-
+<%- include partial/index%>
+<br /> <br/>
 
     your status:
     <br>
     <table>
-      <tr>
-        <th>name</th>
-        <th>wins</th>
-        <th>lose</th>
-        <th>credits</th>
-      </tr>
-      <tr>
-        <td>Ferdy</td>
-        <td>1</td>
-        <td>1</td>
-        <td>10000</td>
-      </tr>
+        <tr>
+            <th>name</th>
+            <th>wins</th>
+            <th>lose</th>
+            <th>credits</th>
+          </tr>
+          <tr>
+            <td><%= userRows.name %></td>
+            <td><%= userRows.win %></td>
+            <td><%= userRows.lose %></td>
+            <td><%= userRows.credit %></td>
+          </tr>
     </table>
     <br><br>
-    <table>
-      <tr>
-        <th>Warrior</th>
-        <th>Health</th>
-        <th>Min Attack</th>
-        <th>Max Attack</th>
-        <th>Defense</th>
-        <th>action</th>
-      </tr>
-      <tr>
-        <td><img src="../public/img/swrd.gif"/></td>
-        <td>100</td>
-        <td>12</td>
-        <td>17</td>
-        <td>20</td>
-        <td><button>reroll</button></td>
-      </tr>
-    </table>
+    <%if(userRows.MonsterId !== null ) {%>
+      <table>
+        <tr>
+          <th>Warrior</th>
+          <th>Name</th>
+          <th>Health</th>
+          <th>Min Attack</th>
+          <th>Max Attack</th>
+        </tr>
+          <tr>
+              <td><img src="/img/<%= userRows.Monster.image %>"></td>
+              <td><%= userRows.Monster.name %></td>
+                <td><%= userRows.Monster.health %></td>
+              <td><%= userRows.Monster.minattack %></td>
+              <td><%= userRows.Monster.maxattack %></td>
+            </tr>
+        </table>
+     <% } else {%>
+      <button>buy warrior</button>
+    <% }%>
+
+
+
     <br>
-    <button>search opponent</button>
+    <form action="/arena/<%=id%>">
+    <input type="submit" value="Battle" />
+    </form>
   </body>
 </html>
+<script type="text/javascript">
+  var elem = document. getElementById("menu-prof")
+  elem.setAttribute("href", "/profile/"+<%=userRows.id%>);
+</script>
