@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
-    <form>
-        <input type="text" name="username" placeholder="username">
+    <form action="/login" method="POST">
+        <input type="text" name="name" placeholder="username">
         <input type="password" name="password" placeholder="password">
         <input type="submit" value="Login">
     </form>
+    <br>
+<a href="/register">Daftar disini</a>
 </body>
 </html>
