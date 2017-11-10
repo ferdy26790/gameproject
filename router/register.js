@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
     res.render('register')
 })
 
-router.post('/', (req, res) => { 
+router.post('/', (req, res) => {
     let obj = {
         name:req.body.name,
         password:req.body.password,
@@ -15,9 +15,9 @@ router.post('/', (req, res) => {
         win: 0,
         lose:0
     }
-    Model.User.create(obj).then(()=> {
+    Model.Users.create(obj).then(()=> {
       res.redirect('/login')
     })
-  }) 
+  })
 
 module.exports = router

@@ -1,6 +1,6 @@
 class Funct{
   static roll(){
-    let random = Math.round(Math.random()*4)
+    let random = Math.round(Math.random()*3)+1
     return random
   }
   static  battleMech(user,enemy){
@@ -12,3 +12,5 @@ class Funct{
     }
   }
 }
+
+module.exports = Funct

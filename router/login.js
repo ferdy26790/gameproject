@@ -8,16 +8,16 @@ router.get('/', function(req, res){
     res.render('login')
   })
 
-router.post('/', (req, res) => { 
-    Model.User.findOne({
+router.post('/', (req, res) => {
+    Model.Users.findOne({
         where: {
           name: req.body.name,
           password: req.body.password
         }
       }).then((user) => {
-        res.redirect(`/${user.id}/profile`)
+        res.redirect(`/profile/${user.id}`)
       })
-      
-  }) 
+
+  })
 
 module.exports = router

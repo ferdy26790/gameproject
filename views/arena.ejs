@@ -1,0 +1,36 @@
+<%- include partial/index%>
+      <div style="padding-left:16px">
+        <h2>Chose Your Opponent!</h2>
+      </div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Warrior</th>
+          <th>Action</th>
+        </tr>
+        <%userRows.forEach((user)=>{%>
+          <%if(user.Monster != null && user.id != id){%>
+            <tr>
+              <td><%= user.name %></td>
+              <td><img src="/img/<%= user.Monster.image %>"/></td>
+              <td>
+
+              <form action='/arena/<%=id%>/battle' method="GET">
+                <button name='idmusuh' value="<%=user.id%>">battle</button>
+              </form>
+            
+              </td>
+            </tr>
+          <%}%>
+
+        <%})%>
+
+      </table>
+      <br>
+
+    </body>
+  </html>
+  <script type="text/javascript">
+    var elem = document. getElementById("menu-prof")
+    elem.setAttribute("href", "/profile/"+<%=userRows.id%>);
+  </script>
